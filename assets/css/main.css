@@ -796,6 +796,7 @@
       display: block;
       font-size: 10px;
     }
+    #webd{display: none;}
   }
   .work {
     position: relative;
