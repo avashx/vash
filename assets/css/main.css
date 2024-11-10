@@ -843,6 +843,9 @@
     margin: 0 auto;
     padding: 0;
     list-style: none;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
   }
   .work--lockup .slider--item {
     position: absolute;
@@ -968,9 +971,6 @@
     .work--lockup .slider--item-center .slider--item-image {
       width: 190px;
       height: 190px;
-      -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    transition: all .5s;
     box-shadow: 0 0 5px 10px #0f33ff38;
     }
     .work--lockup .slider--next,
