@@ -968,10 +968,16 @@
     .work--lockup .slider--item-center .slider--item-image {
       width: 190px;
       height: 190px;
+      -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
     }
     .work--lockup .slider--next,
     .work--lockup .slider--prev {
       top: 105px;
+    }
+    .slider--item-image:hover{
+      transform: scale(1.2);
     }
   }
   @media (max-width: 600px) {
