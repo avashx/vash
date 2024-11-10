@@ -775,10 +775,11 @@
       display: none;
     }
     .intro--banner h1 {
-      margin-top: 0;
+      margin-top: 15;
     }
     .intro--options {
-      display: none;
+      display: bock;
+      font-size: 10px;
     }
   }
   .work {
