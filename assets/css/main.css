@@ -784,6 +784,8 @@
   @media (max-width: 600px) and (max-height: 750px) {
     .intro--banner {
       height: auto;
+      margin-bottom: 10%;
+
     }
     .intro--banner::before,
     .intro--banner::after {
