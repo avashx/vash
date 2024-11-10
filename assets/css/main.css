@@ -775,6 +775,11 @@
       z-index: 200;
       filter: grayscale(80%);
     }
+
+    .intro--banner img :hover {
+      filter: grayscale(0%);
+
+    }
   }
   @media (max-width: 600px) and (max-height: 750px) {
     .intro--banner {
