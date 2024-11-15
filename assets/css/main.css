@@ -884,9 +884,7 @@
     box-shadow: 0 0 5px 10px #0f33ff38;
 
   }
-  .slider--item-image:hover{
-    transform: scale(1.2);
-  }
+
   .work--lockup .slider--item-image img {
     width: 100%;
   }
