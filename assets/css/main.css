@@ -634,6 +634,10 @@
     height: 2px;
     background-color: #282828;
   }
+  .intro--banner span{
+  color:#b97f5b;
+}
+
   .intro--banner::after {
     content: "";
     position: absolute;
