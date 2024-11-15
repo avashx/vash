@@ -1420,6 +1420,7 @@
   .work-request--options label:hover {
   background-color: #bfb0ff;
     fill: #bfb0ff;
+    color: black;
     -webkit-transition: width 0.2s ease-in-out;
     transition: width 0.2s ease-in-out;
   }
