@@ -1029,6 +1029,10 @@
     position: relative;
     height: 475px;
   }
+  .about--banner  a:hover{
+    cloor:#fd8236;
+  }
+
   .about--banner::before {
     content: "";
     position: absolute;
