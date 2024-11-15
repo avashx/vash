@@ -615,6 +615,7 @@
     -ms-flex-pack: center;
     justify-content: center;
     margin: 0 auto;
+    padding-top: 5%;
   }
   @media (max-width: 1180px) {
     .intro {
