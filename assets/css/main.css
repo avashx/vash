@@ -1362,6 +1362,12 @@
   .work-request input[type="submit"]:focus {
     outline: none;
   }
+
+  .work-request input[type="submit"]:hover {
+    outline: none;
+    background-color: ##bfb0ff;
+  }
+
   .work-request--options {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1417,7 +1423,7 @@
       border-color 0.2s ease-in-out;
     transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
   }
-  .work-request--options label svg {
+  .work-request--options label  {
     position: relative;
     left: -5px;
     width: 0;
@@ -1432,7 +1438,7 @@
     background-color: #0f33ff;
     border-color: #0f33ff;
   }
-  .work-request--options input[type="checkbox"]:checked + label svg {
+  .work-request--options input[type="checkbox"]:checked + label  {
     width: 15px;
   }
   .work-request--information {
