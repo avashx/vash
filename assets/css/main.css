@@ -1088,6 +1088,7 @@
   }
   .about--banner a:hover svg {
     left: 10px;
+    fill: #fd8236;
   }
   .about--banner a svg {
     position: relative;
@@ -1096,9 +1097,6 @@
     fill: #fff;
     -webkit-transition: left 0.2s ease-in-out;
     transition: left 0.2s ease-in-out;
-  }
-  .about--banner a svg:hover {
-    fill: #fd8236;
   }
 
   .about--banner img {
