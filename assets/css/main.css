@@ -1030,7 +1030,7 @@
     height: 475px;
   }
   .about--banner  a:hover{
-    cloor:#fd8236;
+    color:#fd8236;
   }
 
   .about--banner::before {
