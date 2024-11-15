@@ -635,8 +635,13 @@
     height: 2px;
     background-color: #282828;
   }
-  .intro--banner span{
+  .intro--banner em{
   color:#fd8236;
+}
+
+.intro--banner:hover em{
+  left: 10px;
+  color:#ffa46c;
 }
 
   .intro--banner::after {
