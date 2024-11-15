@@ -1097,13 +1097,9 @@
     -webkit-transition: left 0.2s ease-in-out;
     transition: left 0.2s ease-in-out;
   }
-
-
-
   .about--banner a svg:hover {
     fill: #fd8236;
   }
-
 
   .about--banner img {
     position: absolute;
