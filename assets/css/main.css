@@ -848,9 +848,7 @@
     margin: 0 auto;
     padding: 0;
     list-style: none;
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    transition: all .5s;
+
   }
   .work--lockup .slider--item {
     position: absolute;
@@ -878,9 +876,7 @@
     margin: 0 auto;
     border-radius: 50%;
     overflow: hidden;
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    transition: all .5s;
+
     box-shadow: 0 0 5px 10px #0f33ff38;
 
   }
