@@ -1417,11 +1417,11 @@
       border-color 0.2s ease-in-out;
     transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
   }
-  .work-request--options label svg {
+  .work-request--options label:hover {
     position: relative;
     left: -5px;
     width: 0;
-    fill: #fff;
+    fill: #bfb0ff;
     -webkit-transition: width 0.2s ease-in-out;
     transition: width 0.2s ease-in-out;
   }
