@@ -686,6 +686,11 @@
     width: 15px;
     fill: #fff;
   }
+
+  .intro--banner button svg:hover {
+    fill: #fd8236;
+  }
+
   .intro--banner img {
     position: absolute;
     bottom: 21px;
