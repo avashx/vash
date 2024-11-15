@@ -637,6 +637,7 @@
   }
   .intro--banner span{
   color:#fd8236;
+  transition: 0.3s;
 }
 
 .intro--banner h1:hover span{
