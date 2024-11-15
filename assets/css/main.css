@@ -1086,8 +1086,9 @@
   .about--banner a {
     padding: 5px 17px 5px 0;
     text-decoration: none;
-    color: #fff;
+    color: #bfb0ff;
     font-weight: 700;
+    font-size: 110%;
     text-transform: uppercase;
     background-color: transparent;
   }
