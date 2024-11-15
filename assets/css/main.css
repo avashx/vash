@@ -1418,9 +1418,7 @@
     transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
   }
   .work-request--options label:hover {
-    position: relative;
-    left: -5px;
-    width: 0;
+  background-color: #bfb0ff;
     fill: #bfb0ff;
     -webkit-transition: width 0.2s ease-in-out;
     transition: width 0.2s ease-in-out;
