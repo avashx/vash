@@ -1,0 +1,428 @@
+<html>
+<head><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"> 
+<title>KA8 Tool</title>
+</head>
+<style>
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Gill Sans', 'GillSansCRegular', Arial, sans-serif;
+
+margin: 0px;
+background: linear-gradient(-45deg, #000000, #400369, #bb0000);
+background-size: 400% 400%;
+ animation: gradient 15s ease infinite;
+	backdrop-filter:blur(4px);
+  z-index:-5;
+}
+		
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+		
+ 
+  
+  
+
+.navbar {
+  font-size: 12px;
+  text-transform: uppercase;
+    font-weight: 600;
+  color: #4a575d;
+  border: 1px solid rgba(10, 0, 0, 0.8);
+  backdrop-filter: blur(90px);
+  box-shadow:0px 3px 6px black;
+  padding-bottom: 10px;
+}
+
+.main-nav {
+  list-style-type: none;
+  display: none;
+}
+
+.nav-links,
+.logo {
+  text-decoration: none;
+  color: white;
+}
+
+.main-nav li {
+  text-align: center;
+  margin: 15px auto;
+}
+
+.logo {
+  display: inline-block;
+  font-size: 22px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.logo span{
+  display: inline-block;
+  font-size: 28px;
+  font-weight: 600;
+  color: #ff7d42;
+ 
+}
+
+.navbar-toggle {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  color: #4a575d;
+  font-size: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.active {
+  display: block;
+}
+  .nav-links:hover{
+     color:white;
+  }
+
+  .logo:hover {
+     transform: scale(1.09);
+  transition: all 0.3s ease-in-out;
+    color: rgba(255, 255, 255, 1);
+  }
+
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+    height: 70px;
+    align-items: center;
+    
+  }
+
+  .main-nav {
+    display: flex;
+    margin-right: 30px;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .main-nav li {
+    margin: 0;
+  }
+
+  .nav-links {
+    margin-left: 40px;
+  }
+
+  .logo {
+    margin-top: 0;
+  }
+
+  .navbar-toggle {
+    display: none;
+  }
+  .nav-links:hover{
+     color:white;
+  }
+
+  .logo:hover {
+     transform: scale(1.09);
+  transition: all 0.3s ease-in-out;
+    color: rgba(255, 255, 255, 1);
+  }
+}
+ .round {
+margin-top: 20%;
+border-radius: 50%;
+box-shadow: 5px 4px #F13846;
+}
+  hr.hr {
+  margin:auto;
+  border: 0;
+    
+  width:95%;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(225, 225, 225, 0), rgba(225, 225, 225, 0.75), rgba(0, 0, 0, 0));
+}
+
+
+.button {
+    width: 75%;
+    padding: 5% ;
+    margin: 7% 0;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 3px 3px #c20000;
+    text-align: center;
+  	border: none;
+		background-color: #c20000;
+		color: white;
+		}
+ .button:hover{
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(135deg, #F13846, #911f00);
+    color:white;
+  }
+    
+  
+/*Card*/
+  .card{
+  flex: 1;
+  min-width: 150px;
+  height: calc(11.7 * 150px / 8.3);
+  background-color: white;
+  align-items: center;
+  border: 1px solid #373F48;
+  border-radius: 12px;
+  margin: 3% 3%;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  color: #393838;
+  display: inline-block;
+  transition: .3s linear;
+  box-shadow: 5px 7px #888888;
+}
+ .card h4,small {
+margin-top: 20px;
+font-family: 'Josefin Sans', sans-serif;
+font-size: 12px;
+font-weight: 50; 
+color: #393838;
+
+  }
+      
+.card h4 span {
+  font-size: 22px;
+			font-weight: 600;
+		}
+.card:hover h4  {
+    color:white;
+		}
+      
+      
+ .card:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+    background:  linear-gradient(135deg,#7b4397,#dc2430);
+    color:white;
+  }
+  /*Radio Console*/
+.console10 {    
+    text-align: center;
+  }
+
+.console10 main {
+        margin-top: 77px;
+  
+        }
+
+ .sec1{
+  text-align:center;
+  padding:30px 10%;
+  height:410px; 
+   color:white;
+}
+   .sec2{
+  margin:auto;
+  background-color: rgba(225,195,205,0.09);
+  min-height: 400px;
+  width: 90%;
+  color:white;
+  margin-top: 4%;
+  margin-bottom : 3%;
+  padding-top: 5%;
+  padding-bottom: 2%;
+  border-radius: 2%;
+  box-shadow:5px 7px 12px black;
+  backdrop-filter: blur(60px);
+  text-align: center;
+}
+  .sec2 h1{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 0.65;
+    margin-top: 0;
+    margin-bottom: 0;
+    letter-spacing: 0.05em;
+    
+  }  .sec2 p{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    color: white;
+    
+    font-weight: 1px;
+    font-size: 22px;
+
+    
+  }
+
+  
+  .title{
+    text-align:left;
+     } 
+  
+  .title h1,.title span{
+    padding-top: 40px;
+    color: #ff7d42;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 62px;
+    line-height: 0.65;
+    margin-top: 0;
+    margin-bottom: 0;
+    letter-spacing: 0.05em;
+}
+    .title span{
+   color: white;
+   font-size: 54px;
+      
+}
+   .title small{
+     color: grey;
+      padding-top: 4%;
+      margin-left: 2%;
+}
+   
+</style>
+<body>
+  <nav class="navbar">
+    <span class="navbar-toggle" id="toggle">
+            <i class="fas fa-bars"></i>
+    </span>
+    <a href="#" class="logo">Ka<span>8</span> </a>
+    <ul class="main-nav" id="menu">
+      <li>
+        <a href="#" class="nav-links">Home</a>
+      </li>
+      <li>
+        <a href="#tools" class="nav-links">Tools</a>
+      </li>
+      <li>
+        <a href="#" class="nav-links">More</a>
+      </li>
+      
+      
+    </ul>
+  </nav>
+  <section class="sec1">
+    <div class="title"><h1>KA8</h1><br><span>Tools</span><br><br><small>Tools on the Spot</small></div>
+  </section>
+  
+  
+<!-- Cards -->
+<div   class="console10">
+    
+		<div class="card ">
+				<h4><span> Password</span><br> Grabber</h4><img class="round" src="https://ka8.herokuapp.com/a8.png" height="60"></img><br><input type="button" class="button" value=Painc>
+   </div>
+    
+    <div class="card ">
+			<h4><span>Windows </span><br> Bypass</h4><img class="round" src="https://ka8.herokuapp.com/a8.png" height="60"><br><input type="button" class="button" value=Painc>
+		</div>
+    
+    <div class="card ">
+				<h4><span>Keylogger</span><br> Windows</h4><img class="round" src="https://ka8.herokuapp.com/a8.png" height="60"> <br><input type="button" class="button" value=Painc>
+		</div>
+    
+    <div class="card ">
+				<h4><span>Parental </span><br> Android</h4> <img class="round" src="https://ka8.herokuapp.com/a8.png" height="60"><br><input type="button" class="button" value=Painc>
+		</div>
+		  
+</div>
+  <!---Section Tools--->
+  <section class="sec2"><h1>Tools</h1>
+    <br>
+  <hr class="hr" id="tools">
+ <br>
+    <p>Android</p><div class="console10">
+    
+		<div class="card ">
+				<h4><span> Call</span><br> Grabber</h4><img class="round" src="https://ka8.herokuapp.com/a8.png" height="60"></img><br><input type="button" class="button" value=Painc>
+   </div>
+    
+    <div class="card ">
+			<h4><span>Location </span><br> Bypass</h4><img class="round" src="https://ka8.herokuapp.com/a8.png" height="60"><br><input type="button" class="button" value=Painc>
+		</div>
+    
+    <div class="card ">
+				<h4><span>Keylogger</span><br> Android</h4><img class="round" src="https://ka8.herokuapp.com/a8.png" height="60"> <br><input type="button" class="button" value=Painc>
+		</div>
+    
+    <div class="card ">
+				<h4><span>Parental </span><br> Android</h4> <img class="round" src="https://ka8.herokuapp.com/a8.png" height="60"><br><input type="button" class="button" value=Painc>
+		</div>
+		  
+</div>
+  <br>
+  <hr class="hr">
+ <br>
+    <p>Windows</p>
+  <div class="console10">
+    
+		<a href="https://drive.google.com/drive/folders/1W-7zo21OtXilYUtgM23moSQIOIlqyhM5?usp=sharing"><div class="card " >
+				<h4><span> Password</span><br> Grabber</h4><img class="round" src="https://ka8.herokuapp.com/a8.png" height="60"></img><br><input type="button" href="https://drive.google.com/drive/folders/1W-7zo21OtXilYUtgM23moSQIOIlqyhM5?usp=sharing" class="button" value=Painc>
+   </div></a>
+    
+    <div class="card ">
+			<h4><span>Bypass </span><br> Windows</h4><img class="round" src="https://ka8.herokuapp.com/a8.png" height="60"><br><input type="button" class="button" value=Painc>
+		</div>
+    
+    <div class="card ">
+				<h4><span>Keylogger</span><br> Windows</h4><img class="round" src="https://ka8.herokuapp.com/a8.png" height="60"> <br><input type="button" class="button" value=Painc>
+		</div>
+    
+    <div class="card ">
+				<h4><span>Parental </span><br> Android</h4> <img class="round" src="https://ka8.herokuapp.com/a8.png" height="60"><br><input type="button" class="button" value=Painc>
+		</div>
+		  
+  
+  <div class="card ">
+				<h4><span> Admin</span><br> Installer</h4><img class="round" src="https://ka8.herokuapp.com/a8.png" height="60"></img><br><input type="button" class="button" value=Painc>
+   </div>
+    
+    <div class="card ">
+			<h4><span>WebShell </span><br> Webage</h4><img class="round" src="https://ka8.herokuapp.com/a8.png" height="60"><br><input type="button" class="button" value=Painc>
+		</div>
+    
+    <div class="card ">
+				<h4><span>Defender </span><br> Windows</h4><img class="round" src="https://ka8.herokuapp.com/a8.png" height="60"> <br><input type="button" class="button" value=Painc>
+		</div>
+    
+    <div class="card ">
+				<h4><span>Parental </span><br> Android</h4> <img class="round" src="https://ka8.herokuapp.com/a8.png" height="60"><br><input type="button" class="button" value=Painc>
+		</div>
+</div>
+    
+    
+    
+  </section>
+  
+</body>
+<script>
+let mainNav = document.getElementById("menu");
+let navBarToggle = document.getElementById("toggle");
+
+navBarToggle.addEventListener("click", function() {
+  mainNav.classList.toggle("active");
+});
+
+</script>
+</html>
