@@ -723,6 +723,8 @@
   .intro--options h3 {
     font-size: 16px;
     text-transform: uppercase;
+    color: #d0c8c8;
+
   }
   .intro--options p {
     margin-bottom: 0;
@@ -735,7 +737,7 @@
       font-size: 55px;
     }
     .intro--banner img {
-      width: 430px;
+      width: 340px;
     }
     .intro--options > a {
       margin-right: 30px;
