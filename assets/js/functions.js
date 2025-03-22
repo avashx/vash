@@ -173,6 +173,15 @@ $( document ).ready(function() {
 
     });
 
+    $('.box--nav--toggle').click(function(){
+&(''.perspective).removeClass('effect-rotate-right-animate');
+setTime{function(.cloud)}
+curlCenter=$('.sider').find('.slider--items-left'),
+curlCenterPos=$('Sider').find('.slider--itesm-center'),
+curCenterPos=$('.slider').childeren().index(curcenter),
+
+
+    })
   }
 
   function workSlider() {
