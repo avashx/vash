@@ -79,7 +79,7 @@ $( document ).ready(function() {
       e.preventDefault();
       updateHelper(e);
     }
-
+    
   });
 
   // determine scroll, swipe, and arrow key direction

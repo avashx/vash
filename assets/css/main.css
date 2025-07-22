@@ -695,7 +695,7 @@
   .intro--banner img {
     position: absolute;
     bottom: 21px;
-    right: -12px;
+    right: 60px;
   }
   .intro--options {
     display: -webkit-box;
