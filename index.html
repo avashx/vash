@@ -159,8 +159,102 @@
         transform: translateY(0);
         transition-delay: 0.4s;
       }
+
     </style>
     <script>
+      // Mobile swipe and infinite carousel for projects section
+      window.addEventListener('DOMContentLoaded', function() {
+        var slider = document.querySelector('.work--lockup .slider');
+        console.log('[Carousel Debug] DOMContentLoaded, slider:', slider);
+        if (!slider) {
+          console.log('[Carousel Debug] Slider not found.');
+          return;
+        }
+        var items = Array.from(slider.children);
+        var current = 0;
+        var isMobile = window.matchMedia('(max-width: 600px)').matches;
+        console.log('[Carousel Debug] isMobile:', isMobile);
+        if (!isMobile) return;
+
+        // Add smooth transition to slider items
+        items.forEach(function(item) {
+          item.style.transition = 'transform 0.5s cubic-bezier(.4,0,.2,1), opacity 0.5s cubic-bezier(.4,0,.2,1)';
+        });
+
+        function updateCarousel(dir) {
+          items.forEach(function(item, i) {
+            item.classList.remove('slider--item-center', 'slider--item-left', 'slider--item-right', 'slider--item-gright', 'slider--item-fright', 'slider--item-gleft', 'slider--item-fleft', 'slide-left', 'slide-right');
+          });
+          var n = items.length;
+          items[(current + n) % n].classList.add('slider--item-center');
+          items[(current - 1 + n) % n].classList.add('slider--item-left');
+          items[(current + 1) % n].classList.add('slider--item-right');
+          items[(current + 2) % n].classList.add('slider--item-gright');
+          items[(current + 3) % n].classList.add('slider--item-fright');
+          // Animate direction
+          if (dir === 'left') {
+            items[(current + n) % n].classList.add('slide-left');
+          } else if (dir === 'right') {
+            items[(current + n) % n].classList.add('slide-right');
+          }
+        }
+        updateCarousel();
+
+        // Touch swipe logic
+        var startX = 0;
+        var threshold = 40; // px
+        slider.addEventListener('touchstart', function(e) {
+          if (e.touches.length === 1) {
+            startX = e.touches[0].clientX;
+          }
+        });
+        slider.addEventListener('touchend', function(e) {
+          if (e.changedTouches.length === 1) {
+            var dx = e.changedTouches[0].clientX - startX;
+            if (dx > threshold) {
+              // Swipe right (previous)
+              current = (current - 1 + items.length) % items.length;
+              updateCarousel('right');
+            } else if (dx < -threshold) {
+              // Swipe left (next)
+              current = (current + 1) % items.length;
+              updateCarousel('left');
+            }
+          }
+        });
+
+        // Also enable prev/next buttons for mobile
+        var prevBtn = document.querySelector('.slider--prev');
+        var nextBtn = document.querySelector('.slider--next');
+        if (prevBtn) prevBtn.addEventListener('click', function() {
+          current = (current - 1 + items.length) % items.length;
+          updateCarousel('right');
+        });
+        if (nextBtn) nextBtn.addEventListener('click', function() {
+          current = (current + 1) % items.length;
+          updateCarousel('left');
+        });
+
+        // Auto carousel effect
+        var autoInterval = setInterval(function() {
+          current = (current + 1) % items.length;
+          console.log('[Carousel Debug] Auto-advance, current:', current);
+          updateCarousel('left');
+        }, 3500);
+        // Pause auto on user interaction for 8s
+        function pauseAuto() {
+          clearInterval(autoInterval);
+          autoInterval = setInterval(function() {
+            current = (current + 1) % items.length;
+            console.log('[Carousel Debug] Auto-advance (after pause), current:', current);
+            updateCarousel('left');
+          }, 3500);
+        }
+        slider.addEventListener('touchend', pauseAuto);
+        if (prevBtn) prevBtn.addEventListener('click', pauseAuto);
+        if (nextBtn) nextBtn.addEventListener('click', pauseAuto);
+      });
+      });
       // Animate modal when contact section becomes active (section--is-active)
       window.addEventListener('DOMContentLoaded', function() {
         var contactSection = document.querySelector('.contact');
