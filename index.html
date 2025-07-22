@@ -66,6 +66,19 @@
         50% { opacity: 0; }
       }
       /* SWIPE-UP indicator styles */
+      /* Nav toggle attention animation */
+      .header--nav-toggle.nav-bounce {
+        animation: nav-toggle-bounce 2s cubic-bezier(0.4,0,0.2,1);
+      }
+      @keyframes nav-toggle-bounce {
+        0%, 100% { transform: translateY(0); }
+        10% { transform: translateY(-3px); }
+        20% { transform: translateY(0); }
+        30% { transform: translateY(-5px); }
+        40% { transform: translateY(0); }
+        50% { transform: translateY(-2px); }
+        60%, 100% { transform: translateY(0); }
+      }
       .swipeup-indicator {
         display: none;
         position: absolute;
@@ -118,6 +131,52 @@
       }
     </style>
     <script>
+      // Nav toggle bounce animation control
+      window.addEventListener('DOMContentLoaded', function() {
+        var navToggle = document.querySelector('.header--nav-toggle');
+        var navBounceInterval = null;
+        if (navToggle) {
+          function triggerBounce() {
+            navToggle.classList.add('nav-bounce');
+            setTimeout(function() {
+              navToggle.classList.remove('nav-bounce');
+            }, 2000); // 2s animation
+          }
+          function bounceLoop() {
+            triggerBounce();
+            navBounceInterval = setTimeout(bounceLoop, 17000); // 2s anim + 15s pause
+          }
+          setTimeout(bounceLoop, 6000); // initial 6s delay
+          navToggle.addEventListener('click', function() {
+            // Stop further animation after first click
+            if (navBounceInterval) clearTimeout(navBounceInterval);
+            navToggle.classList.remove('nav-bounce');
+          }, { once: true });
+        }
+
+        // SWIPE-UP indicator hide on section change
+        var indicator = document.getElementById('swipeup-indicator');
+        if (indicator) {
+          // Hide on nav-toggle click (menu open)
+          if (navToggle) {
+            navToggle.addEventListener('click', function() {
+              indicator.style.display = 'none';
+            }, { once: true });
+          }
+          // Hide on section change (swipe)
+          var mainContent = document.querySelector('.l-main-content');
+          if (mainContent) {
+            mainContent.addEventListener('click', function(e) {
+              // If a section is clicked, hide indicator
+              indicator.style.display = 'none';
+            }, { once: true });
+            // Also listen for touch events (swipe)
+            mainContent.addEventListener('touchstart', function(e) {
+              indicator.style.display = 'none';
+            }, { once: true });
+          }
+        }
+      });
       // Typewriter effect
       const words = [
         "Vashishth",
