@@ -629,9 +629,9 @@
   .intro--banner::before {
     content: "";
     position: absolute;
-    bottom: 20px;
-    left: -15px;
-    right: 0;
+    bottom: 18px;
+    left: 0px;
+    right: 0px;
     height: 2px;
     background-color: #282828;
   }
@@ -706,7 +706,7 @@
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    margin: 0;
+    margin: 40px 0 0 0;
     padding: 0;
     list-style: none;
   }
@@ -728,6 +728,8 @@
   }
   .intro--options p {
     margin-bottom: 0;
+    text-align: justify;
+    font-size: 12px;
   }
   @media (max-width: 900px) {
     .intro--banner {
@@ -776,9 +778,12 @@
       font-size: 55px;
     }
     .intro--banner img {
-      margin-bottom: -40%;
-      height: 70%;
-      width: 60%;
+      margin-bottom: -10%;
+      margin-top: -30px;
+      width: 48vw;
+      height: 48vw;
+      max-width: 200px;
+      max-height: 200px;
       border-radius: 50%;
       object-fit: cover;
       object-position: top center;
@@ -787,6 +792,8 @@
       box-shadow: 0 0 5px 10px #0f33ff38;
       z-index: 200;
       filter: grayscale(80%);
+      right: 10vw;
+      left: auto;
     }
 
     .intro--banner img :hover {
@@ -810,7 +817,7 @@
     .intro--options {
       display: block;
       font-size: 10px;
-    }
+      margin-top: 30px;
     #webd{display: none;}
   }
   .work {
