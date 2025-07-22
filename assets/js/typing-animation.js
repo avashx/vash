@@ -41,11 +41,12 @@
     // My Resume
     if (!hasTypedResume) {
       var $resume = $('#my-resume-link');
-      if ($resume.length && isInViewport($resume[0])) {
+      var $resumeText = $resume.find('.resume-typing-text');
+      if ($resume.length && $resumeText.length && isInViewport($resume[0])) {
         hasTypedResume = true;
-        var originalResume = $resume.text().trim();
+        var originalResume = $resumeText.text().trim();
         setTimeout(function() {
-          typeText($resume, originalResume, 70);
+          typeText($resumeText, originalResume, 70);
         }, 2000);
       }
     }
