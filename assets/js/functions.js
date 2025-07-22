@@ -186,8 +186,10 @@ curCenterPos=$('.slider').childeren().index(curcenter),
 
   function workSlider() {
 
-    function goToNextSlide() {
-      var curLeft = $('.slider').find('.slider--item-left'),
+    $('.slider--prev, .slider--next').click(function() {
+
+      var $this = $(this),
+          curLeft = $('.slider').find('.slider--item-left'),
           curLeftPos = $('.slider').children().index(curLeft),
           curCenter = $('.slider').find('.slider--item-center'),
           curCenterPos = $('.slider').children().index(curCenter),
@@ -198,86 +200,65 @@ curCenterPos=$('.slider').childeren().index(curcenter),
           $center = $('.slider--item-center'),
           $right = $('.slider--item-right'),
           $item = $('.slider--item');
+
       $('.slider').animate({ opacity : 0 }, 400);
+
       setTimeout(function(){
+
+      if ($this.hasClass('slider--next')) {
         if (curLeftPos < totalWorks - 1 && curCenterPos < totalWorks - 1 && curRightPos < totalWorks - 1) {
           $left.removeClass('slider--item-left').next().addClass('slider--item-left');
           $center.removeClass('slider--item-center').next().addClass('slider--item-center');
           $right.removeClass('slider--item-right').next().addClass('slider--item-right');
-        } else {
+        }
+        else {
           if (curLeftPos === totalWorks - 1) {
             $item.removeClass('slider--item-left').first().addClass('slider--item-left');
             $center.removeClass('slider--item-center').next().addClass('slider--item-center');
             $right.removeClass('slider--item-right').next().addClass('slider--item-right');
-          } else if (curCenterPos === totalWorks - 1) {
+          }
+          else if (curCenterPos === totalWorks - 1) {
             $left.removeClass('slider--item-left').next().addClass('slider--item-left');
             $item.removeClass('slider--item-center').first().addClass('slider--item-center');
             $right.removeClass('slider--item-right').next().addClass('slider--item-right');
-          } else {
+          }
+          else {
             $left.removeClass('slider--item-left').next().addClass('slider--item-left');
             $center.removeClass('slider--item-center').next().addClass('slider--item-center');
             $item.removeClass('slider--item-right').first().addClass('slider--item-right');
           }
         }
-        $('.slider').animate({ opacity : 1 }, 400);
-      }, 400);
-    }
-
-    function goToPrevSlide() {
-      var curLeft = $('.slider').find('.slider--item-left'),
-          curLeftPos = $('.slider').children().index(curLeft),
-          curCenter = $('.slider').find('.slider--item-center'),
-          curCenterPos = $('.slider').children().index(curCenter),
-          curRight = $('.slider').find('.slider--item-right'),
-          curRightPos = $('.slider').children().index(curRight),
-          totalWorks = $('.slider').children().length,
-          $left = $('.slider--item-left'),
-          $center = $('.slider--item-center'),
-          $right = $('.slider--item-right'),
-          $item = $('.slider--item');
-      $('.slider').animate({ opacity : 0 }, 400);
-      setTimeout(function(){
+      }
+      else {
         if (curLeftPos !== 0 && curCenterPos !== 0 && curRightPos !== 0) {
           $left.removeClass('slider--item-left').prev().addClass('slider--item-left');
           $center.removeClass('slider--item-center').prev().addClass('slider--item-center');
           $right.removeClass('slider--item-right').prev().addClass('slider--item-right');
-        } else {
+        }
+        else {
           if (curLeftPos === 0) {
             $item.removeClass('slider--item-left').last().addClass('slider--item-left');
             $center.removeClass('slider--item-center').prev().addClass('slider--item-center');
             $right.removeClass('slider--item-right').prev().addClass('slider--item-right');
-          } else if (curCenterPos === 0) {
+          }
+          else if (curCenterPos === 0) {
             $left.removeClass('slider--item-left').prev().addClass('slider--item-left');
             $item.removeClass('slider--item-center').last().addClass('slider--item-center');
             $right.removeClass('slider--item-right').prev().addClass('slider--item-right');
-          } else {
+          }
+          else {
             $left.removeClass('slider--item-left').prev().addClass('slider--item-left');
             $center.removeClass('slider--item-center').prev().addClass('slider--item-center');
             $item.removeClass('slider--item-right').last().addClass('slider--item-right');
           }
         }
-        $('.slider').animate({ opacity : 1 }, 400);
-      }, 400);
-    }
-
-    // Click events
-    $('.slider--prev').click(goToPrevSlide);
-    $('.slider--next').click(goToNextSlide);
-
-    // Enable swipe for mobile view
-    if (window.innerWidth <= 768) {
-      var slider = document.querySelector('.slider');
-      if (slider && typeof Hammer !== 'undefined') {
-        var mc = new Hammer(slider);
-        mc.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
-        mc.on('swipeleft', function() {
-          goToNextSlide();
-        });
-        mc.on('swiperight', function() {
-          goToPrevSlide();
-        });
       }
-    }
+
+    }, 400);
+
+    $('.slider').animate({ opacity : 1 }, 400);
+
+    });
 
   }
 
@@ -304,44 +285,5 @@ curCenterPos=$('.slider').childeren().index(curcenter),
   outerNav();
   workSlider();
   transitionLabels();
-
-  // Type 'My Projects' in work section after 2s delay when scrolled to it, only once, no cursor
-  let workTitleTyped = false;
-  function typeWorkTitle() {
-    const $workSection = $('.work');
-    const $title = $workSection.find('h2').first();
-    if ($title.length && !workTitleTyped) {
-      workTitleTyped = true;
-      const text = 'My Projects';
-      $title.text('');
-      let i = 0;
-      setTimeout(function typeChar() {
-        if (i < text.length) {
-          $title.text($title.text() + text.charAt(i));
-          i++;
-          setTimeout(typeChar, 80);
-        }
-      }, 2000);
-    }
-  }
-
-  // Detect when work section becomes active
-  function observeWorkSection() {
-    const observer = new MutationObserver(function(mutations) {
-      mutations.forEach(function(mutation) {
-        if ($(mutation.target).hasClass('section--is-active')) {
-          if ($(mutation.target).find('.work').length) {
-            typeWorkTitle();
-          }
-        }
-      });
-    });
-    $('.main-content > .section').each(function() {
-      if ($(this).find('.work').length) {
-        observer.observe(this, { attributes: true, attributeFilter: ['class'] });
-      }
-    });
-  }
-  observeWorkSection();
 
 });
