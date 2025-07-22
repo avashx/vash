@@ -783,12 +783,12 @@
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      object-position: center;
+      object-position: top center;
       display: block;
       opacity: 0.85;
       box-shadow: 0 0 5px 10px #0f33ff38;
       z-index: 200;
-      filter: grayscale(80%);
+      filter: grayscale(80%) scale(1.18);
       transition: filter 0.3s;
     }
     .intro--banner img:hover {
