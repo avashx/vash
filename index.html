@@ -50,7 +50,61 @@
           <li class="l-section section section--is-active">
             <div class="intro">
               <div class="intro--banner">
-                <h1>Hello, I am<br><span>Aman<br>Vashishth</span></h1>
+                <h1>Hello, I am<br><span>Aman<br><span id="typewriter"></span></span></h1>
+    <style>
+      .typewriter-cursor {
+        display: inline-block;
+        width: 1ch;
+        animation: blink 1s steps(1) infinite;
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+    </style>
+    <script>
+      const words = [
+        "Vashishth",
+        "वशिष्ठ",
+        "瓦希什特",
+        "Вашишт",
+        "바시쉬트"
+      ];
+      const el = document.getElementById("typewriter");
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      const typingSpeed = 110;
+      const deletingSpeed = 60;
+      const pauseAfter = 2000;
+      const pauseBeforeDelete = 2000;
+
+      function type() {
+        const current = words[wordIndex];
+        if (!isDeleting) {
+          el.innerHTML = current.substring(0, charIndex + 1) + '<span class="typewriter-cursor">|</span>';
+          charIndex++;
+          if (charIndex === current.length) {
+            setTimeout(() => {
+              isDeleting = true;
+              type();
+            }, pauseBeforeDelete);
+            return;
+          }
+        } else {
+          el.innerHTML = current.substring(0, charIndex - 1) + '<span class="typewriter-cursor">|</span>';
+          charIndex--;
+          if (charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            setTimeout(type, pauseAfter);
+            return;
+          }
+        }
+        setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
+      }
+      setTimeout(type, pauseAfter);
+    </script>
                 <a href="https://docs.google.com/document/d/1v3O69H1weNZujF8ObSb7UHBkFF1HPHoD/edit?usp=sharing&ouid=115145051957664523985&rtpof=true&sd=true"></a><button class="cta">Know me!
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
                   <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
