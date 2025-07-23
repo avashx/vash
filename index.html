@@ -900,6 +900,50 @@
 .resume-modal-overlay[style*="display: none"] {
   pointer-events: none;
 }
+.modal--information p:first-child {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.1em;
+  letter-spacing: 0.03em;
+}
+.modal--information a {
+  display: block;
+  margin: 0.5em 0 0.5em 0;
+  font-size: 1.01em;
+  font-weight: 400;
+  color: #bfb0ff;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color 0.18s;
+}
+.modal--information a:hover {
+  color: #fd8236;
+}
+.burst-effect {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  left: 0; top: 0;
+  width: 0; height: 0;
+}
+.burst-circle {
+  position: absolute;
+  left: 0; top: 0;
+  width: 44px; height: 44px;
+  margin-left: -22px; margin-top: -22px;
+  border-radius: 50%;
+  background: rgba(253,130,54,0.18);
+  border: 2px solid #fd8236;
+  opacity: 0.7;
+  transform: scale(0.5);
+  animation: burst-anim 0.5s cubic-bezier(.22,1,.36,1) forwards;
+}
+@keyframes burst-anim {
+  0% { opacity: 0.7; transform: scale(0.5); }
+  60% { opacity: 0.5; transform: scale(1.2); }
+  100% { opacity: 0; transform: scale(1.7); }
+}
 </style>
 <script>
   // Toggle pixel effect on intro image with click animation and auto-glitch every 12s (mobile fix)
@@ -983,6 +1027,27 @@
       }
     });
   }
+})();
+  // Click burst effect on intro image
+(function() {
+  var img = document.getElementById('intro-img');
+  if (!img) return;
+  img.addEventListener('click', function(e) {
+    var burst = document.createElement('div');
+    burst.className = 'burst-effect';
+    var circle = document.createElement('div');
+    circle.className = 'burst-circle';
+    burst.appendChild(circle);
+    document.body.appendChild(burst);
+    // Position at cursor
+    var x = e.clientX, y = e.clientY;
+    burst.style.left = x + 'px';
+    burst.style.top = y + 'px';
+    // Remove after animation
+    setTimeout(function() {
+      burst.remove();
+    }, 520);
+  });
 })();
 </script>
 </html>
