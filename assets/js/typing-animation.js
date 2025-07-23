@@ -53,4 +53,18 @@
   }
   $(window).on('scroll', triggerTyping);
   $(document).ready(triggerTyping);
+  // Underline animation for IT (GI) and IT (CSE)
+  $(document).ready(function() {
+    setTimeout(function() {
+      $('.underline-animate').addClass('underline-active');
+      setTimeout(function() {
+        $('.underline-animate').removeClass('underline-active');
+      }, 3000);
+    }, 2000);
+
+    // CTA button appear animation
+    setTimeout(function() {
+      $('.cta').addClass('cta-appear');
+    }, 700); // delay for effect, adjust as needed
+  });
 })(jQuery);
