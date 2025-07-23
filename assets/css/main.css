@@ -581,6 +581,9 @@
   .side-nav li:nth-child(5)::before {
     content: "05";
   }
+  .side-nav li:nth-child(6)::before {
+    content: "06";
+  }
   .side-nav li.is-active {
     color: #0f33ff;
     -webkit-transition: color 0.4s ease-in-out;
@@ -658,7 +661,7 @@
     font-size: 68px;
     font-weight: 900;
     line-height: 1;
-    z-index: -1;
+    z-index: 1;
   }
   .intro--banner button {
     position: relative;
@@ -843,6 +846,7 @@
     .intro--banner {
       height: auto;
       margin-bottom: 10%;
+
     }
     .intro--banner::before,
     .intro--banner::after {

@@ -44,6 +44,7 @@
             <li><span>About</span></li>
             <li><span>Contact</span></li>
             <li><span>Know me!</span></li>
+            <li><span>EXPERIENCE</span></li>
           </ul>
         </nav>
         <ul class="l-main-content main-content">
@@ -470,42 +471,23 @@
                 <div class="work-request--options">
                   <span class="options-a">
                     <input id="opt-1" type="checkbox" value="app design">
-                    <label for="opt-1">
-                     
-                      App Development
-                    </label>
+                    <label for="opt-1">App Development</label>
                     <input id="opt-2" type="checkbox" value="graphic design">
-                    <label for="opt-2">
-                    
-                      JavaScript
-                    </label>
+                    <label for="opt-2">JavaScript</label>
                     <input id="opt-3" type="checkbox" value="motion design">
-                    <label for="opt-3">
-                     
-                      Web App 
-                    </label>
+                    <label for="opt-3">Web App </label>
                   </span>
                   <span class="options-b">
                     <input id="opt-4" type="checkbox" value="ux design">
-                    <label for="opt-4">
-                     
-                      Cyber Security
-                    </label>
+                    <label for="opt-4">Cyber Security</label>
                     <input id="opt-5" type="checkbox" value="webdesign">
-                    <label for="opt-5">
-                      
-                      Python
-                    </label>
+                    <label for="opt-5">Python</label>
                     <input id="opt-6" type="checkbox" value="marketing">
-                    <label for="opt-6">
-                      
-                      GIS
-                    </label>
+                    <label for="opt-6">GIS</label>
                   </span>
                 </div>
                 <p>Connect Here!</p>
                 <div class="work-request--information">
-                  
                   <div class="information-name">
                     <input id="name" type="text" spellcheck="false">
                     <label for="name">Name</label>
@@ -519,6 +501,78 @@
               </form>
             </div>
           </li>
+
+          <!-- Experience Section -->
+          <li class="l-section section">
+            <div class="experience-section">
+              <div class="experience-title-banner">
+    <span class="experience-title-my">my</span><br>
+    <span class="experience-title-main">Experiences..</span>
+  </div>
+              <div class="experience-cards-row">
+                <!-- DMRC -->
+                <div class="experience-card glassy">
+                  <div class="exp-card-header">
+                    <img src="assets/img/comp/dmrc.webp" alt="DMRC Logo" class="exp-avatar">
+                    <div class="exp-meta">
+                      <div class="exp-role">Summer Intern</div>
+                      <div class="exp-company">Delhi Metro Rail Corporation (DMRC)</div>
+                    </div>
+                  </div>
+                  <div class="exp-title">Coach-level crowd density analysis, real-time tracking & smart arrival notifications for Delhi Metro.</div>
+                  <a href="#" class="exp-know-link resume-typing-text">Know</a>
+                  <div class="exp-tags">
+                    <span>Analytics</span><span>IoT</span><span>Smart City</span>
+                  </div>
+                </div>
+                <!-- DTC -->
+                <div class="experience-card glassy">
+                  <div class="exp-card-header">
+                    <img src="assets/img/comp/DTC.webp" alt="DTC Logo" class="exp-avatar">
+                    <div class="exp-meta">
+                      <div class="exp-role">Intern</div>
+                      <div class="exp-company">Delhi Transport Corporation (DTC)</div>
+                    </div>
+                  </div>
+                  <div class="exp-title">Full-stack real-time DTC bus tracking, digital fine collection, and ticketing apps (Node.js, Socket.io, MongoDB).</div>
+                  <a href="#" class="exp-know-link resume-typing-text">Know</a>
+                  <div class="exp-tags">
+                    <span>Node.js</span><span>Socket.io</span><span>MongoDB</span><span>Leaflet.js</span>
+                  </div>
+                </div>
+                <!-- NFL -->
+                <div class="experience-card glassy">
+                  <div class="exp-card-header">
+                    <img src="assets/img/comp/nfl.webp" alt="NFL Logo" class="exp-avatar">
+                    <div class="exp-meta">
+                      <div class="exp-role">Winter Intern</div>
+                      <div class="exp-company">NFL, Ministry of Chemicals & Fertilizers</div>
+                    </div>
+                  </div>
+                  <div class="exp-title">Drone Didi Dashboard for autonomous drone fertilization, analytics, and cost calculation for village women.</div>
+                  <a href="#" class="exp-know-link resume-typing-text">Know</a>
+                  <div class="exp-tags">
+                    <span>Automation</span><span>Dashboard</span><span>AgriTech</span>
+                  </div>
+                </div>
+                <!-- StartupHigh & EntrepI -->
+                <div class="experience-card glassy">
+                  <div class="exp-card-header">
+                    <img src="assets/img/comp/stratuphigh.webp" alt="StartupHigh Logo" class="exp-avatar">
+                    <div class="exp-meta">
+                      <div class="exp-role">Web Developer Intern</div>
+                      <div class="exp-company">StartupHigh &amp; EntrepI</div>
+                    </div>
+                  </div>
+                  <div class="exp-title">Developed web solutions to boost online presence and growth for these startups.</div>
+                  <a href="#" class="exp-know-link resume-typing-text">Know</a>
+                  <div class="exp-tags">
+                    <span>Web Dev</span><span>Branding</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -529,6 +583,7 @@
     <li>About</li>
     <li>Contact</li>
     <li>Know me</li>
+    <li>EXPERIENCE</li>
   </ul>
 </div>
 
@@ -538,9 +593,247 @@
   <script src="assets/js/typing-animation.js"></script>
 </body>
 <style>
-  /* Glitch effect for intro image */
-  @keyframes glitch {
-    0% { filter: none; transform: none; }
+  /* Experience Section Styles */
+  .experience-section {
+    padding: 3.5rem 0 2.5rem 0;
+    background: none;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+  }
+  .experience-title-banner {
+  text-align: left;
+  margin: 2.5rem 0 2.2rem 5.2rem;
+}
+.experience-title-my {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #bfb0ff;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+  text-transform: lowercase;
+}
+.experience-title-main {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  text-transform: capitalize;
+}
+  .experience-section h2 {
+    font-size: 2.1rem;
+    font-weight: 800;
+    margin: 2.5rem 0 2.2rem 1.2rem;
+    letter-spacing: 0.04em;
+    color: #fff;
+    text-align: left;
+  }
+  .experience-cards-row {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    overflow-x: visible;
+    padding: 0 10vw 1.5rem 10vw;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+  .experience-card.glassy {
+    background: rgb(16 14 25 / 29%);
+    border-radius: 12px;
+    box-shadow: 0 6px 24px 0 rgba(0,0,0,0.32), 0 1px 4px 0 rgba(0,0,0,0.18);
+    min-width: 220px;
+    max-width: 240px;
+    min-height: 340px;
+    height: 340px;
+    padding: 1.2rem 1rem 0.7rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: -90px;
+    margin-bottom: 0.5rem;
+    position: relative;
+    transition: transform 0.52s cubic-bezier(.22,1,.36,1), box-shadow 0.52s cubic-bezier(.22,1,.36,1), z-index 0.2s;
+    cursor: pointer;
+    will-change: transform;
+    z-index: 1;
+    backdrop-filter: blur(14px) saturate(120%);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .experience-card.glassy:first-child {
+    margin-left: 0;
+  }
+  .experience-card.glassy:hover {
+    transform: translateY(-18px) scale(1.07) rotateZ(-2deg);
+    box-shadow: 0 24px 64px 0 rgba(253,130,54,0.18), 0 8px 32px 0 rgba(0,0,0,0.22);
+    z-index: 10;
+  }
+  .experience-card.glassy.active {
+    /* Remove zoom/pop on click */
+    transform: none;
+    box-shadow: 0 6px 24px 0 rgba(0,0,0,0.32), 0 1px 4px 0 rgba(0,0,0,0.18);
+    z-index: 1;
+  }
+  .exp-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: contain;
+    margin-right: 1.1rem;
+    border: 3px solid #fd8236;
+    background: #fff;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.09);
+    display: block;
+    padding: 4px;
+  }
+  @media (max-width: 900px) {
+    .exp-avatar {
+      width: 38px;
+      height: 38px;
+      margin-right: 0;
+      margin-bottom: 0.3rem;
+      padding: 3px;
+    }
+  }
+  .exp-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.1rem;
+    width: 100%;
+  }
+  .exp-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1em;
+  }
+  .exp-role {
+    font-size: 1.01em;
+    font-weight: 700;
+    color: #fd8236;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.1em;
+  }
+  .exp-company {
+    font-size: 0.97em;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.1em;
+  }
+  .exp-title {
+    font-size: 0.98em;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 0.8rem;
+    line-height: 1.35;
+    letter-spacing: 0.01em;
+    min-height: 2.1em;
+  }
+  .exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-top: auto;
+    width: 100%;
+  }
+  .exp-tags span {
+    background: none;
+    color: #fff;
+    font-size: 0.93em;
+    font-weight: 400;
+    border-radius: 0;
+    padding: 0 0.1em 0 0.1em;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.1em;
+    border: none;
+    box-shadow: none;
+    border-bottom: 2px solid #fd8236;
+    text-decoration: none;
+    transition: border-color 0.2s;
+    cursor: default;
+    opacity: 0.85;
+  }
+  .exp-tags span:hover {
+    border-color: #fff;
+    opacity: 1;
+  }
+  @media (max-width: 900px) {
+    .experience-cards-row {
+      gap: 1.1rem;
+      padding-left: 0.5rem;
+    }
+    .experience-card.glassy {
+      min-width: 260px;
+      max-width: 280px;
+      min-height: 220px;
+      padding: 1.2rem 0.7rem 0.8rem 0.7rem;
+    }
+    .exp-avatar {
+      width: 36px;
+      height: 36px;
+      margin-right: 0.7rem;
+    }
+    .exp-title {
+      font-size: 1em;
+      min-height: 2.2em;
+    }
+  }
+  @media (max-width: 600px) {
+    .experience-cards-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.1rem;
+      padding-left: 2vw;
+      padding-right: 2vw;
+      overflow-x: unset;
+      justify-content: center;
+    }
+    .experience-card.glassy {
+      margin-left: 0;
+      min-width: 0;
+      max-width: 100%;
+      z-index: 1;
+      min-height: 220px;
+      height: 220px;
+      padding: 0.8rem 0.5rem 0.5rem 0.5rem;
+    }
+    .experience-card.glassy:hover {
+      transform: scale(1.04) rotateZ(-2deg);
+      z-index: 2;
+    }
+    .exp-title {
+      font-size: 0.71em;
+      min-height: 2.1em;
+      max-height: 2.6em;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: normal;
+    }
+    .exp-tags span {
+      font-size: 0.68em;
+    }
+    .exp-card-header {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 0.7rem;
+      width: 100%;
+    }
+    .exp-avatar {
+      margin: 0 0 0.3rem 0;
+      display: block;
+    }
+    .exp-meta {
+      align-items: center;
+      text-align: center;
+    }
     10% { filter: contrast(1.5) brightness(1.2) hue-rotate(10deg); transform: translate(-2px, 2px) scale(1.01) skewX(-2deg); }
     20% { filter: contrast(0.8) brightness(1.1) hue-rotate(-10deg); transform: translate(2px, -1px) scale(0.99) skewY(1deg); }
     30% { filter: none; transform: none; }
@@ -597,5 +890,16 @@
       }, 350);
     }, 12000);
   })();
+
+  document.querySelectorAll('.experience-card.glassy').forEach(function(card) {
+  card.addEventListener('click', function(e) {
+    // Only activate if not clicking a link
+    if (e.target.classList.contains('exp-know-link')) return;
+    document.querySelectorAll('.experience-card.glassy.active').forEach(function(activeCard) {
+      activeCard.classList.remove('active');
+    });
+    card.classList.add('active');
+  });
+});
 </script>
 </html>
