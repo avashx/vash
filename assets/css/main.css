@@ -661,7 +661,7 @@
     font-size: 68px;
     font-weight: 900;
     line-height: 1;
-    z-index: -1;
+    z-index: 1;
   }
   .intro--banner button {
     position: relative;
@@ -1717,4 +1717,26 @@
     -webkit-transition-delay: 0.16s;
     transition-delay: 0.16s;
   }
-  
+  .burst-spark {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  left: 0; top: 0;
+}
+.burst-dot {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fd8236 60%, #fff 100%);
+  opacity: 0.85;
+  will-change: transform, opacity;
+  pointer-events: none;
+  box-shadow: 0 0 6px 1px #fd8236;
+  animation: burst-dot-anim 0.55s cubic-bezier(.4,0,.2,1) forwards;
+}
+@keyframes burst-dot-anim {
+  0% { opacity: 1; transform: scale(0.7) translate(0,0); }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: scale(1.1) translate(var(--tx), var(--ty)); }
+}

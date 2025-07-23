@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- LCD segmented font for click counter -->
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <title>Aman</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +13,9 @@
   <meta name="keywords" content="global, template, html, sass, jquery">
   <meta name="author" content="Bucky Maler">
   <link rel="stylesheet" href="assets/css/main.css">
+
+  <!-- Digital font for click counter -->
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -28,9 +33,9 @@
     <div id="viewport" class="l-viewport">
       <div class="l-wrapper">
         <header class="header">
-          <a class="header--logo" href="#0">
+          <a class="header--logo" href="#0" style="position:relative;">
             <img src="assets/img/logo.png" height="45" >
-            <p>Aman Vashishth</p>
+            <p style="display:inline-block; position:relative;">Aman Vashishth</p>
           </a>
           <a href="https://www.linkedin.com/in/amanvas/"><button class="header--cta cta">Connect!</button></a>
           <div class="header--nav-toggle">
@@ -55,6 +60,8 @@
   <span class="swipeup-text"><p>SWIPE</p></span>
   <em class="swipeup-arrow">&#8593;</em>
 </div>
+<!-- Watermark click counter -->
+<div id="click-counter-watermark"></div>
                 <h1>Hello, I am<br><span>Aman<br><span id="typewriter"></span></span></h1>
     <style>
       .typewriter-cursor {
@@ -360,21 +367,21 @@
                     </a>
                   </li>
                   <li class="slider--item slider--item-center">
-                    <a href="http://jobdoor.ct.ws">
-                      <div class="slider--item-image">
-                        <img src="assets/img/work-metiew-smith.jpg" >
-                      </div>
-                      <p class="slider--item-title">Job Door</p>
-                      <p class="slider--item-description">Developed a database-focused job portal, connects candidates with job opportunities based on their qualifications.</p>
-                    </a>
-                  </li>
-                  <li class="slider--item slider--item-right">
                     <a href="https://nfldrone.netlify.app/">
                       <div class="slider--item-image">
                         <img src="assets/img/nfl.png">
                       </div>
                       <p class="slider--item-title">Drone-Assisted App</p>
                       <p class="slider--item-description">For Namo-Drone-Didi (Govt. Scheme), Built a web app using JavaScript, PHP, GIS, GMapsAPI and Tableau for drone-assisted fertilization and data insights, empowering rural farmers, especially women.</p>
+                    </a>
+                  </li>
+                  <li class="slider--item slider--item-right">
+                    <a href="http://jobdoor.ct.ws">
+                      <div class="slider--item-image">
+                        <img src="assets/img/work-metiew-smith.jpg" >
+                      </div>
+                      <p class="slider--item-title">Job Door</p>
+                      <p class="slider--item-description">Developed a database-focused job portal, connects candidates with job opportunities based on their qualifications.</p>
                     </a>
                   </li>
                   <li class="slider--item slider--item-gright">
@@ -839,6 +846,49 @@
       align-items: center;
       text-align: center;
     }
+  }
+
+
+
+/* Watermark click counter style */
+#click-counter-watermark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'VT323', 'Share Tech Mono', 'Consolas', 'monospace';
+  font-size: 18vw;
+  font-weight: 900;
+  color: #fd8236;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  letter-spacing: 0.04em;
+  text-shadow:
+    0 0 10px #fd8236,
+    0 0 18px #fd8236,
+    0 0 2px #fd8236,
+    0 0 1px #fff;
+  filter: blur(0.5px) brightness(1.08) contrast(1.08) drop-shadow(0 0 3px #fd8236);
+  user-select: none;
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1);
+  white-space: nowrap;
+  line-height: 1;
+  pointer-events: none;
+}
+@media (max-width: 900px) {
+  #click-counter-watermark {
+    font-size: 28vw;
+  }
+}
+@media (max-width: 600px) {
+  #click-counter-watermark {
+    font-size: 38vw;
+  }
+}
+
+  /* Glitch keyframes (global, not inside media query) */
+  @keyframes glitch {
     10% { filter: contrast(1.5) brightness(1.2) hue-rotate(10deg); transform: translate(-2px, 2px) scale(1.01) skewX(-2deg); }
     20% { filter: contrast(0.8) brightness(1.1) hue-rotate(-10deg); transform: translate(2px, -1px) scale(0.99) skewY(1deg); }
     30% { filter: none; transform: none; }
@@ -850,6 +900,68 @@
   }
   .glitch {
     animation: glitch 0.45s linear;
+    position: relative;
+    z-index: 2;
+  }
+  /* Haunted TV glitch: red/blue channel split, gitter, blend */
+  .glitch::before,
+  .glitch::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    opacity: 0.55;
+    z-index: 3;
+    mix-blend-mode: lighten;
+    border-radius: inherit;
+    background: none;
+    transition: opacity 0.18s;
+  }
+  .glitch::before {
+    filter: blur(1.5px) contrast(1.2) brightness(1.1) drop-shadow(0 0 6px #ff003c);
+    background: none;
+    box-shadow: 0 0 0 0 #ff003c;
+    animation: glitch-r 0.45s linear;
+    mix-blend-mode: lighten;
+  }
+  .glitch::after {
+    filter: blur(1.5px) contrast(1.2) brightness(1.1) drop-shadow(0 0 6px #00eaff);
+    background: none;
+    box-shadow: 0 0 0 0 #00eaff;
+    animation: glitch-b 0.45s linear;
+    mix-blend-mode: lighten;
+  }
+  @keyframes glitch-r {
+    0% { transform: translate(0,0); opacity: 0.4; }
+    10% { transform: translate(-2px,1px); opacity: 0.7; }
+    20% { transform: translate(2px,-1px); opacity: 0.5; }
+    30% { transform: translate(-1px,2px); opacity: 0.7; }
+    40% { transform: translate(1px,-2px); opacity: 0.5; }
+    50% { transform: translate(-2px,1px); opacity: 0.7; }
+    60% { transform: translate(2px,-1px); opacity: 0.5; }
+    70% { transform: translate(-1px,2px); opacity: 0.7; }
+    80% { transform: translate(1px,-2px); opacity: 0.5; }
+    100% { transform: translate(0,0); opacity: 0.4; }
+  }
+  @keyframes glitch-b {
+    0% { transform: translate(0,0); opacity: 0.4; }
+    10% { transform: translate(2px,-1px); opacity: 0.7; }
+    20% { transform: translate(-2px,1px); opacity: 0.5; }
+    30% { transform: translate(1px,-2px); opacity: 0.7; }
+    40% { transform: translate(-1px,2px); opacity: 0.5; }
+    50% { transform: translate(2px,-1px); opacity: 0.7; }
+    60% { transform: translate(-2px,1px); opacity: 0.5; }
+    70% { transform: translate(1px,-2px); opacity: 0.7; }
+    80% { transform: translate(-1px,2px); opacity: 0.5; }
+    100% { transform: translate(0,0); opacity: 0.4; }
+  }
+  /* Gitter scan lines */
+  .glitch-gitter {
+ color:#00eaff
+  }
+  @keyframes gitter-move {
+    0% { background-position-y: 0; }
+    100% { background-position-y: 8px; }
   }
   .resume-modal-overlay {
   position: fixed;
@@ -920,72 +1032,103 @@
 .modal--information a:hover {
   color: #fd8236;
 }
-.burst-effect {
+.burst-spark {
   position: fixed;
   pointer-events: none;
-  z-index: 99999;
+  z-index: 9999;
   left: 0; top: 0;
-  width: 0; height: 0;
 }
-.burst-circle {
+.burst-dot {
   position: absolute;
-  left: 0; top: 0;
-  width: 44px; height: 44px;
-  margin-left: -22px; margin-top: -22px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background: rgba(253,130,54,0.18);
-  border: 2px solid #fd8236;
-  opacity: 0.7;
-  transform: scale(0.5);
-  animation: burst-anim 0.5s cubic-bezier(.22,1,.36,1) forwards;
+  background: linear-gradient(135deg, #fd8236 60%, #fff 100%);
+  opacity: 0.85;
+  will-change: transform, opacity;
+  pointer-events: none;
+  box-shadow: 0 0 6px 1px #fd8236;
+  animation: burst-dot-anim 0.55s cubic-bezier(.4,0,.2,1) forwards;
 }
-@keyframes burst-anim {
-  0% { opacity: 0.7; transform: scale(0.5); }
-  60% { opacity: 0.5; transform: scale(1.2); }
-  100% { opacity: 0; transform: scale(1.7); }
+@keyframes burst-dot-anim {
+  0% { opacity: 1; transform: scale(0.7) translate(0,0); }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: scale(1.1) translate(var(--tx), var(--ty)); }
 }
 </style>
 <script>
-  // Toggle pixel effect on intro image with click animation and auto-glitch every 12s (mobile fix)
+  // Toggle pixel effect on intro image with glitch effect on every switch (manual and auto)
   (function() {
     var img = document.getElementById('intro-img');
     if (!img) return;
     var normal = 'assets/img/introduction-visual.webp';
     var pixel = 'assets/img/introduction-visual-pixel.webp';
     var isPixel = false;
-    function swapImage(forcePixel) {
-      // Always update src with cache-busting query to force reload
-      isPixel = (typeof forcePixel === 'boolean') ? forcePixel : !isPixel;
-      var src = isPixel ? pixel : normal;
-      img.src = src + '?v=' + Date.now();
+
+    // Watermark counter
+    var watermark = document.getElementById('click-counter-watermark');
+    var introBanner = document.querySelector('.intro--banner');
+    if (introBanner && watermark) {
+      introBanner.style.position = 'relative';
+      watermark.style.position = 'absolute';
+      watermark.style.pointerEvents = 'none';
+      watermark.style.zIndex = '1';
     }
-    // Manual click toggle with glitch effect
-    img.addEventListener('click', function() {
+
+    function showWatermarkCounter(count) {
+      if (!watermark) return;
+      watermark.textContent = count;
+      watermark.style.opacity = '1';
+      // Fade out after 3s
+      if (showWatermarkCounter._timeout) clearTimeout(showWatermarkCounter._timeout);
+      showWatermarkCounter._timeout = setTimeout(function() {
+        watermark.style.opacity = '0';
+      }, 3000);
+    }
+
+    function glitchAndSwap(forcePixel) {
+      // Add glitch class and gitter overlay
       img.classList.add('glitch');
+      // Add gitter scan lines overlay
+      let gitter = document.createElement('div');
+      gitter.className = 'glitch-gitter';
+      img.parentElement.style.position = 'relative';
+      img.parentElement.appendChild(gitter);
       img.style.transform = 'scale(0.93)';
       setTimeout(function() {
         img.style.transform = 'scale(1)';
-        swapImage();
+        // Toggle pixel/normal
+        isPixel = (typeof forcePixel === 'boolean') ? forcePixel : !isPixel;
+        var src = isPixel ? pixel : normal;
+        img.src = src + '?v=' + Date.now();
         img.classList.remove('glitch');
+        if (gitter && gitter.parentElement) gitter.parentElement.removeChild(gitter);
       }, 350);
+    }
+
+
+    // Click counter logic (only watermark)
+    var clickCount = 0;
+    img.addEventListener('click', function() {
+      glitchAndSwap();
+      clickCount++;
+      showWatermarkCounter(clickCount);
     });
+
     // Keyboard accessibility
     img.tabIndex = 0;
     img.setAttribute('role', 'button');
     img.setAttribute('aria-pressed', 'false');
     img.addEventListener('keydown', function(e) {
       if (e.key === 'Enter' || e.key === ' ') {
-        img.click();
+        glitchAndSwap();
         e.preventDefault();
       }
     });
+
     // Glitch effect and auto-switch every 12s
     setInterval(function() {
-      img.classList.add('glitch');
-      setTimeout(function() {
-        swapImage();
-        img.classList.remove('glitch');
-      }, 350);
+      glitchAndSwap();
     }, 12000);
   })();
 
@@ -1034,19 +1177,27 @@
   if (!img) return;
   img.addEventListener('click', function(e) {
     var burst = document.createElement('div');
-    burst.className = 'burst-effect';
-    var circle = document.createElement('div');
-    circle.className = 'burst-circle';
-    burst.appendChild(circle);
+    burst.className = 'burst-spark';
+    var rect = img.getBoundingClientRect();
+    var x = e.clientX;
+    var y = e.clientY;
+    burst.style.left = (x - 12) + 'px';
+    burst.style.top = (y - 12) + 'px';
+    var dots = 12;
+    for (var i = 0; i < dots; i++) {
+      var dot = document.createElement('div');
+      dot.className = 'burst-dot';
+      var angle = (2 * Math.PI * i) / dots;
+      var tx = Math.cos(angle) * 36 + 'px';
+      var ty = Math.sin(angle) * 36 + 'px';
+      dot.style.setProperty('--tx', tx);
+      dot.style.setProperty('--ty', ty);
+      burst.appendChild(dot);
+    }
     document.body.appendChild(burst);
-    // Position at cursor
-    var x = e.clientX, y = e.clientY;
-    burst.style.left = x + 'px';
-    burst.style.top = y + 'px';
-    // Remove after animation
     setTimeout(function() {
       burst.remove();
-    }, 520);
+    }, 600);
   });
 })();
 </script>
