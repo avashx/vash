@@ -51,8 +51,8 @@
             <div class="intro">
               <div class="intro--banner">
 <div id="swipeup-indicator" class="swipeup-indicator">
-  <span class="swipeup-text">SWIPE</span>
-  <span class="swipeup-arrow">&#8593;</span>
+  <span class="swipeup-text"><p>SWIPE</p></span>
+  <em class="swipeup-arrow">&#8593;</em>
 </div>
                 <h1>Hello, I am<br><span>Aman<br><span id="typewriter"></span></span></h1>
     <style>
@@ -83,7 +83,7 @@
         display: none;
         position: absolute;
         left: 50%;
-        top: -32px;
+        top: -20px;
         transform: translate(-50%, 0);
         font-family: 'Montserrat', Arial, sans-serif;
         font-size: 0.68rem;
@@ -105,12 +105,16 @@
         flex-direction: column;
         align-items: center;
         gap: 0px;
+        color: #ffffff;
       }
       .swipeup-text {
-        font-size: 0.68rem;
-        font-weight: 700;
+        font-size: 0.48rem;
+        font-weight: 400;
         letter-spacing: 0.13em;
         margin-bottom: 0px;
+        color: #ffffff;
+      }
+       .swipeup-text p {
         color: #ffffff;
       }
       .swipeup-arrow {
@@ -118,6 +122,9 @@
         margin-top: -2px;
         animation: swipeup-move 1.1s cubic-bezier(0.4,0,0.2,1) infinite;
         display: block;
+        color: #ffffff;
+
+
       }
       @keyframes swipeup-move {
         0% { transform: translateY(0); opacity: 0.7; }
@@ -308,7 +315,7 @@
       // Only run on mobile
       if (window.matchMedia('(max-width: 600px)').matches) {
         swipeupLoop();
-      }
+      } 
     </script>
                 <a href="https://docs.google.com/document/d/1v3O69H1weNZujF8ObSb7UHBkFF1HPHoD/edit?usp=sharing&ouid=115145051957664523985&rtpof=true&sd=true"></a><button class="cta"><span class="cta-text">Know me!</span>
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
@@ -548,21 +555,26 @@
   }
 </style>
 <script>
-  // Toggle pixel effect on intro image with click animation and auto-glitch every 12s
+  // Toggle pixel effect on intro image with click animation and auto-glitch every 12s (mobile fix)
   (function() {
     var img = document.getElementById('intro-img');
     if (!img) return;
     var normal = 'assets/img/introduction-visual.webp';
     var pixel = 'assets/img/introduction-visual-pixel.webp';
     var isPixel = false;
+    function swapImage(forcePixel) {
+      // Always update src with cache-busting query to force reload
+      isPixel = (typeof forcePixel === 'boolean') ? forcePixel : !isPixel;
+      var src = isPixel ? pixel : normal;
+      img.src = src + '?v=' + Date.now();
+    }
     // Manual click toggle with glitch effect
     img.addEventListener('click', function() {
       img.classList.add('glitch');
       img.style.transform = 'scale(0.93)';
       setTimeout(function() {
         img.style.transform = 'scale(1)';
-        isPixel = !isPixel;
-        img.src = isPixel ? pixel : normal;
+        swapImage();
         img.classList.remove('glitch');
       }, 350);
     });
@@ -578,12 +590,9 @@
     });
     // Glitch effect and auto-switch every 12s
     setInterval(function() {
-      // Add glitch class
       img.classList.add('glitch');
-      // Switch image after short glitch
       setTimeout(function() {
-        isPixel = !isPixel;
-        img.src = isPixel ? pixel : normal;
+        swapImage();
         img.classList.remove('glitch');
       }, 350);
     }, 12000);
