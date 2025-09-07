@@ -1,28 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- LCD segmented font for click counter -->
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-  <title>Aman</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
-
-  <meta name="description" content="HTML5 website template">
-  <meta name="keywords" content="global, template, html, sass, jquery">
-  <meta name="author" content="Bucky Maler">
+  
+  <!-- SEO Meta Tags -->
+  <title>Aman Vashishth - Full Stack Developer & IT Professional | Portfolio</title>
+  <meta name="description" content="Aman Vashishth is a skilled Full Stack Developer and IT professional from NSUT Delhi, specializing in web development, cybersecurity, GIS, and drone technology. Explore my projects, experience, and skills.">
+  <meta name="keywords" content="Aman Vashishth, Full Stack Developer, Web Developer, IT Professional, NSUT Delhi, JavaScript, Python, Cybersecurity, GIS, Drone Technology, NFL Intern, DMRC Intern, Portfolio">
+  <meta name="author" content="Aman Vashishth">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://amanv.me/">
+  <meta property="og:title" content="Aman Vashishth - Full Stack Developer & IT Professional">
+  <meta property="og:description" content="Portfolio of Aman Vashishth showcasing web development projects, cybersecurity expertise, and professional experience at DMRC, NFL, and startups.">
+  <meta property="og:image" content="https://amanv.me/assets/img/logo.png">
+  <meta property="og:site_name" content="Aman Vashishth Portfolio">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://amanv.me/">
+  <meta property="twitter:title" content="Aman Vashishth - Full Stack Developer & IT Professional">
+  <meta property="twitter:description" content="Portfolio showcasing web development projects, cybersecurity expertise, and professional experience.">
+  <meta property="twitter:image" content="https://amanv.me/assets/img/logo.png">
+  
+  <!-- Favicon for better SEO and browser compatibility -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/logo.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/logo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://amanv.me/">
+  
+  <!-- Preconnect to external domains for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- LCD segmented font for click counter -->
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
 
   <!-- Digital font for click counter -->
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Aman Vashishth",
+    "url": "https://amanv.me/",
+    "image": "https://amanv.me/assets/img/logo.png",
+    "jobTitle": "Full Stack Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    },
+    "alumniOf": {
+      "@type": "Organization",
+      "name": "Netaji Subhas University of Technology"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "New Delhi",
+      "addressCountry": "India"
+    },
+    "email": "avs.vash@gmail.com",
+    "telephone": "+919990220332",
+    "sameAs": [
+      "https://www.linkedin.com/in/amanvas/",
+      "https://github.com/avashx"
+    ],
+    "knowsAbout": [
+      "Web Development",
+      "JavaScript",
+      "Python",
+      "Cybersecurity",
+      "GIS",
+      "Drone Technology",
+      "Full Stack Development"
+    ],
+    "description": "Full Stack Developer and IT professional specializing in web development, cybersecurity, and geoinformatics. Experience with DMRC, NFL, and various startups."
+  }
+  </script>
+  
+  <!-- WebSite Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Aman Vashishth Portfolio",
+    "alternateName": "Aman Vashishth - Full Stack Developer",
+    "url": "https://amanv.me/",
+    "description": "Professional portfolio website showcasing web development projects, cybersecurity expertise, and technical skills.",
+    "author": {
+      "@type": "Person",
+      "name": "Aman Vashishth"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://amanv.me/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/Person">
 
 <!-- notification for small viewports and landscape oriented smartphones -->
 <div class="device-notification">
   <a class="device-notification--logo" href="#0">
-    <img src="assets/img/logo.png" height="42" >
+    <img src="assets/img/logo.png" alt="Aman Vashishth Logo" width="42" height="42">
     <p>Aman Vashishth</p>
   </a>
   <p class="device-notification--message">Hello, This is Aman I request you orient your device to portrait or find a larger screen. </p>
@@ -32,17 +125,17 @@
   <div class="container"><div class="outer-nav--return"></div>
     <div id="viewport" class="l-viewport">
       <div class="l-wrapper">
-        <header class="header">
+        <header class="header" role="banner">
           <a class="header--logo" href="#0" style="position:relative;">
-            <img src="assets/img/logo.png" height="45" >
-            <p style="display:inline-block; position:relative;">Aman Vashishth</p>
+            <img src="assets/img/logo.png" alt="Aman Vashishth Logo" width="45" height="45">
+            <p style="display:inline-block; position:relative;" itemprop="name">Aman Vashishth</p>
           </a>
-          <a href="https://www.linkedin.com/in/amanvas/"><button class="header--cta cta">Connect!</button></a>
-          <div class="header--nav-toggle">
+          <a href="https://www.linkedin.com/in/amanvas/" aria-label="Connect with Aman on LinkedIn"><button class="header--cta cta">Connect!</button></a>
+          <div class="header--nav-toggle" role="button" aria-label="Toggle navigation menu">
             <span></span>
           </div>
         </header>
-        <nav class="l-side-nav">
+        <nav class="l-side-nav" role="navigation" aria-label="Main navigation">
           <ul class="side-nav">
             <li class="is-active"><span>Home</span></li>
             <li><span>Projects</span></li>
@@ -52,8 +145,8 @@
             <li><span>EXPERIENCE</span></li>
           </ul>
         </nav>
-        <ul class="l-main-content main-content">
-          <li class="l-section section section--is-active">
+        <main class="l-main-content main-content" role="main">
+          <section class="l-section section section--is-active" id="home">
             <div class="intro">
               <div class="intro--banner">
 <div id="swipeup-indicator" class="swipeup-indicator">
@@ -62,7 +155,7 @@
 </div>
 <!-- Watermark click counter -->
 <div id="click-counter-watermark"></div>
-                <h1>Hello, I am<br><span>Aman<br><span id="typewriter"></span></span></h1>
+                <h1 itemprop="name">Hello, I am<br><span>Aman<br><span id="typewriter"></span></span></h1>
     <style>
       .typewriter-cursor {
         display: inline-block;
@@ -333,16 +426,16 @@
                   </svg>
                   <span class="btn-background"></span>
                 </button></a>
-                <img id="intro-img" src="assets/img/introduction-visual.webp" height="450" style="cursor:pointer;transition:transform 0.18s cubic-bezier(.4,0,.2,1);">
+                <img id="intro-img" src="assets/img/introduction-visual.webp" alt="Aman Vashishth Professional Profile" width="450" height="450" style="cursor:pointer;transition:transform 0.18s cubic-bezier(.4,0,.2,1);">
               </div>
               <div class="intro--options">
                 <a href="#0">
-                  <h3>B. Tech in <span class="underline-animate">IT (GI)</span></h3>
+                  <h3>B. Tech in <span class="underline-animate">Information Technology (GI)</span></h3>
                   <!--- <p>in <b>Geo-Informatics (IT)</b><br> -->   
                   from <b>Netaji Subhas University of Technology</b>,<br>Azad Hind Fauj Marg, Dwarka Sector-3, New Delhi-78</p>
                 </a>
                 <a href="#0">
-                  <h3>Diploma in <span class="underline-animate">IT (CSE)</span> </h3>
+                  <h3>Diploma in <span class="underline-animate">Information Technology (CSE)</span> </h3>
                   <p>from <b>(DSEU)</b> Delhi Skill Entrepreneurship University,<br> Sector 9, Dwarka, New Delhi, (Govt. of Delhi)</p>
                 </a>
                 <a id="webd" href="#0">
@@ -351,8 +444,8 @@
                 </a>
               </div>
             </div>
-          </li>
-          <li class="l-section section">
+          </section>
+          <section class="l-section section" id="projects">
             <div class="work">
               <h2 id="my-projects-title">My Projects</h2><center><sub>Click on Projects to explore!</sub></center>
               <div class="work--lockup">
@@ -360,7 +453,7 @@
                   <li class="slider--item slider--item-left">
                     <a href="https://avstex.netlify.app/">
                       <div class="slider--item-image">
-                        <img src="assets/img/work-victory.jpg" >
+                        <img src="assets/img/work-victory.jpg" alt="Text to Handwriting Converter Project">
                       </div>
                       <p class="slider--item-title">Text-Handwriting</p>
                       <p class="slider--item-description">converts digital text to a realistic handwritten format using OCR, adaptable to different handwriting styles.</p>
@@ -369,7 +462,7 @@
                   <li class="slider--item slider--item-center">
                     <a href="https://nfldrone.netlify.app/">
                       <div class="slider--item-image">
-                        <img src="assets/img/nfl.png">
+                        <img src="assets/img/nfl.png" alt="NFL Drone-Assisted App Project">
                       </div>
                       <p class="slider--item-title">Drone-Assisted App</p>
                       <p class="slider--item-description">For Namo-Drone-Didi (Govt. Scheme), Built a web app using JavaScript, PHP, GIS, GMapsAPI and Tableau for drone-assisted fertilization and data insights, empowering rural farmers, especially women.</p>
@@ -378,7 +471,7 @@
                   <li class="slider--item slider--item-right">
                     <a href="http://jobdoor.ct.ws">
                       <div class="slider--item-image">
-                        <img src="assets/img/work-metiew-smith.jpg" >
+                        <img src="assets/img/work-metiew-smith.jpg" alt="Job Door Portal Project">
                       </div>
                       <p class="slider--item-title">Job Door</p>
                       <p class="slider--item-description">Developed a database-focused job portal, connects candidates with job opportunities based on their qualifications.</p>
@@ -387,7 +480,7 @@
                   <li class="slider--item slider--item-gright">
                     <a href="https://avs.000.pe/focus.html">
                       <div class="slider--item-image">
-                        <img src="assets/img/work-alex-nowak.jpg">
+                        <img src="assets/img/work-alex-nowak.jpg" alt="Focus Time Management App">
                       </div>
                       <p class="slider--item-title">Focus</p>
                       <p class="slider--item-description">a time management web app that involves Pomodoro Technique app, with task tracking, calendar, scheduling, and AI-powered task prioritization.</p>
@@ -396,7 +489,7 @@
                   <li class="slider--item slider--item-fright">
                     <a href="/ka.html">
                       <div class="slider--item-image">
-                        <img src="assets/img/kat.jpg">
+                        <img src="assets/img/kat.jpg" alt="Ka-8 Cybersecurity Web App">
                       </div>
                       <p class="slider--item-title">Ka-8</p>
                       <p class="slider--item-description">Built Cyber Security Webapp contain all necessary tool for learning & practice.</p>
@@ -422,8 +515,8 @@
                 </div>
               </div>
             </div>
-          </li>
-          <li class="l-section section">
+          </section>
+          <section class="l-section section" id="about">
             <div class="about">
               <div class="about--banner">
                 <h2>Have<br> look<br>at my<br>Resume</h2>
@@ -435,7 +528,7 @@
                   </span>
                   
                 </a>
-                <img src="assets/img/about-visual.png" height="580" >
+                <img src="assets/img/about-visual.png" alt="Aman Vashishth Resume and Achievements" width="580" height="580">
               </div>
               <div class="about--options">
                 <a href="https://www.linkedin.com/in/amanvas/">
@@ -449,18 +542,17 @@
                 </a>
               </div>
             </div>
-          </li>
-          <li class="l-section section">
+          </section>
+          <section class="l-section section" id="contact">
             <div class="contact">
               <div class="contact--lockup">
                 <div class="modal">
-                  <div class="modal--information"><p>Aman Vashishth</p>
-                    <p>South West Delhi, New Delhi</p>
-                    <a href="mailto:avs.vash@gmail.com">avs.vash@gmail.com</a>
+                  <div class="modal--information">
+                    <p itemprop="name">Aman Vashishth</p>
+                    <p itemprop="address">South West Delhi, New Delhi</p>
+                    <a href="mailto:avs.vash@gmail.com" itemprop="email">avs.vash@gmail.com</a>
                     <a href="mailto:aman.vashishth.ug24@nsut.ac.in">aman.vashishth.ug24@nsut.ac.in</a>
-
-                    
-                    <a href="tel:+919990220332">+91 9990220332</a>
+                    <a href="tel:+919990220332" itemprop="telephone">+91 9990220332</a>
                   </div>
                   <ul class="modal--options">
                     <li><a href="https://www.linkedin.com/in/amanvas/">Linkedin</a></li>
@@ -470,8 +562,8 @@
                 </div>
               </div>
             </div>
-          </li>
-          <li class="l-section section">
+          </section>
+          <section class="l-section section" id="skills">
             <div class="hire">
               <h2>Skills I have worked on</h2>
               <form class="work-request">
@@ -507,10 +599,10 @@
                 <input type="submit" value="Send Message">
               </form>
             </div>
-          </li>
+          </section>
 
           <!-- Experience Section -->
-          <li class="l-section section">
+          <section class="l-section section" id="experience">
             <div class="experience-section">
               <div class="experience-title-banner">
     <span class="experience-title-my">my</span><br>
@@ -579,19 +671,21 @@
                 </div>
               </div>
             </div>
-          </li>
-        </ul>
+          </section>
+        </main>
       </div>
     </div>
   </div>
-  <ul class="outer-nav">
-    <li class="is-active">Home</li>
-    <li>Projects</li>
-    <li>About</li>
-    <li>Contact</li>
-    <li>Know me</li>
-    <li>Experience</li>
-  </ul>
+  <nav class="outer-nav" role="navigation" aria-label="Secondary navigation">
+    <ul>
+      <li class="is-active">Home</li>
+      <li>Projects</li>
+      <li>About</li>
+      <li>Contact</li>
+      <li>Know me</li>
+      <li>Experience</li>
+    </ul>
+  </nav>
 </div>
 
 <!-- Resume Flying Paper Modal -->

@@ -1,0 +1,29 @@
+{
+  "name": "Aman Vashishth - Full Stack Developer Portfolio",
+  "short_name": "Aman Vashishth",
+  "description": "Portfolio website of Aman Vashishth - Full Stack Developer and IT Professional specializing in web development, cybersecurity, and geoinformatics.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#fd8236",
+  "orientation": "portrait",
+  "scope": "/",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "assets/img/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/img/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "developer", "technology"],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
